@@ -1,0 +1,85 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+// Función para ingresar números
+int ingresarNumeros(int &n1, int &n2)
+{
+    cout << "Ingresar el primer numero: ";
+    cin >> n1;
+    cout << "Ingresar el segundo numero: ";
+    cin >> n2;
+    return 0; // Indica que la operación se realizó correctamente
+}
+
+// Función para sumar dos números dados por el usuario
+int sumarNumeros(const int &n1, const int &n2, int &resultado)
+{
+    resultado = n1 + n2;
+    return 0; // Indica que la operación se realizó correctamente
+}
+
+// Función para verificar si un número es primo
+int esPrimo(const int &numero)
+{
+    if (numero <= 1)
+        return 0; // No es primo
+
+    for (int i = 2; i <= sqrt(numero); i++)
+    {
+        if (numero % i == 0)
+            return 0; // No es primo
+    }
+
+    return 1; // Es primo
+}
+
+int main()
+{
+    int opcion;
+    int numero1, numero2, suma;
+
+    do
+    {
+        // Menú de opciones
+        cout << "MENU\n";
+        cout << "1. Ingresar numeros\n";
+        cout << "2. Sumar numeros\n";
+        cout << "3. Verificar si un numero es primo\n";
+        cout << "0. Salir\n";
+        cout << "Seleccione una opcion: ";
+        cin >> opcion;
+
+        switch (opcion)
+        {
+        case 1:
+            // Opción 1: Ingresar números
+            ingresarNumeros(numero1, numero2);
+            break;
+        case 2:
+            // Opción 2: Sumar números ingresados
+            sumarNumeros(numero1, numero2, suma);
+            cout << "La suma de los numeros es: " << suma << endl;
+            break;
+        case 3:
+            // Opción 3: Verificar si un número es primo
+            cout << "Ingresar un numero para verificar si es primo: ";
+            cin >> numero1;
+            if (esPrimo(numero1))
+                cout << numero1 << " es un numero primo." << endl;
+            else
+                cout << numero1 << " no es un numero primo." << endl;
+            break;
+        case 0:
+            // Opción 0: Salir del programa
+            cout << "Saliendo del programa. chau!!!" << endl;
+            break;
+        default:
+            // Opción inválida
+            cout << "Opcion invalida. Intente de nuevo." << endl;
+        }
+
+    } while (opcion != 0);
+
+    return 0;
+}
