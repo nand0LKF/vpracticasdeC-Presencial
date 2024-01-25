@@ -1,0 +1,52 @@
+#include <iostream>
+using namespace std;
+
+// Declaraciones de variable globales.
+int n1, n2;
+
+int sumar() {
+	return n1 + n2;
+}
+
+int multiplicar() {
+	return n1 * n2;
+}
+
+void ingresar() {
+	cout << "Ingresar el primer numero: ";
+	cin >> n1;
+	cout << "Ingresar el segundo numero: ";
+	cin >> n2;
+}
+
+bool esPar(int numero) {
+	// Comprueba si el número es divisible por 2
+	if (numero % 2 == 0) {
+		return true;  // se muestra si es par
+	} else {
+		return false; // se muestra si es impar
+	}
+}
+
+int main() {
+	// Llamada a la función ingresar para obtener los valores de n1 y n2.
+	ingresar();
+	
+	// Muestra la suma y la multiplicación de los números ingresados.
+	cout << "Suma de los numeros es: " << sumar() << endl;
+	cout << "Multiplicacion de los numeros es: " << multiplicar() << endl;
+	
+	// Pide al usuario ingresar un número para verificar si es par o impar.
+	int numero;
+	cout << "Ingrese un número: ";
+	cin >> numero;
+	
+	// Llama a la función esPar y muestra el resultado.
+	if (esPar(numero)) {
+		cout << "El número es par." << endl;
+	} else {
+		cout << "El número es impar." << endl;
+	}
+	
+	return 0;
+}
