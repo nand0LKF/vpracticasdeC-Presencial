@@ -1,0 +1,24 @@
+#include <iostream>
+using namespace std;
+// Función para ingresar dos números desde la entrada estándar
+void ingresar(int &n1, int &n2)
+{
+	cout << "Ingresar un numero: ";//mensajes para ingresar los numeros que se sumaran
+	cin >> n1;
+	cout << "Ingresar otro numero: ";
+	cin >> n2;
+}
+
+void sumar(int n1, int n2, int &resultado) //suma de los numeros y se guardan o almacenan en la variable de referencia
+{
+	resultado = n1 + n2;
+}
+
+int main(int argc, char *argv[])
+{
+	int n1, n2, resultado;
+	ingresar(n1, n2);
+	sumar(n1, n2, resultado); 
+	cout << "La suma es: " << resultado << endl;
+	return 0;
+}
